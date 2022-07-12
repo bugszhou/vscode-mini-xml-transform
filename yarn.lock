@@ -949,10 +949,10 @@ mini-program-xml-parser@0.0.4:
   dependencies:
     entities "^4.3.1"
 
-mini-xml-parser@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/mini-xml-parser/-/mini-xml-parser-0.2.5.tgz#f500fe5eb6f6435e2644ccb5e4c75a6e515cb663"
-  integrity sha512-uTtNRLCp8vMfRljvRuoOxwdYhD8uX6hmqI19svC0veEL69JeAOB61dNYrGoByJP/+/S18ABhTYqJ9ViNnam6mA==
+mini-xml-parser@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/mini-xml-parser/-/mini-xml-parser-0.2.6.tgz#172e891764014216338fa6c87e23ca31f6a6e403"
+  integrity sha512-cJ58jRBt2lLVTAA39W7abim3ZYFIbA7AL+uhXYCyW27NZaQSgIpqGcjee1b5mzpMBlDAZUnR0v08bqPUitGBDQ==
   dependencies:
     "@types/node" "^15.12.2"
     mini-program-xml-parser "0.0.4"
