@@ -63,6 +63,6 @@
 	},
 	"dependencies": {
 		"mini-program-xml-parser": "^0.0.3",
-		"mini-xml-parser": "^0.2.4"
+		"mini-xml-parser": "^0.2.5"
 	}
 }

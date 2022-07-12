@@ -36,7 +36,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       try {
         parseXml(relative(rootPath, filePath), dest, {
-          isLowerCaseTag: true,
+          isLowerCaseTag: false,
           useRootPath: true,
           sourceDir: src,
 					cwd: rootPath,

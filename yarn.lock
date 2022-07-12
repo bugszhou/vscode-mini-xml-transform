@@ -942,20 +942,27 @@ micromatch@^4.0.4:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
-mini-program-xml-parser@0.0.3, mini-program-xml-parser@^0.0.3:
+mini-program-xml-parser@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/mini-program-xml-parser/-/mini-program-xml-parser-0.0.4.tgz#bb83488a4cf097deef863715298bf14f06a25d3a"
+  integrity sha512-MlE31724ZSpT2Ak7JVunFaocgJRLNj+bU6jgvQ6nmWDh0a+LZsl7YrYAI0tFcMAPUy6cmxHt9kaCItWbl3aNzg==
+  dependencies:
+    entities "^4.3.1"
+
+mini-program-xml-parser@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/mini-program-xml-parser/-/mini-program-xml-parser-0.0.3.tgz#08f2108b374e6793610e473d7ea8eb91f0d33ff5"
   integrity sha512-iMVt3sRWwSYVoqh8bTxzXxIuPf9VimhvsxYSdjBDtAiCI8cjyrW/8Edb3NR+5PszBX8VgVOWaegLNeDwCKK40g==
   dependencies:
     entities "^4.3.1"
 
-mini-xml-parser@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/mini-xml-parser/-/mini-xml-parser-0.2.4.tgz#062fe8b1420c2c261010d016eda3cc6eae880ad7"
-  integrity sha512-gaDb+CEVGOBqAZ9anoHp2VLhcnszb6JL5+sP6ee6eSq2K4oiHdLiRTwxNNmL6EmbK/+1g/igt2WSaEdpjFQM6g==
+mini-xml-parser@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/mini-xml-parser/-/mini-xml-parser-0.2.5.tgz#f500fe5eb6f6435e2644ccb5e4c75a6e515cb663"
+  integrity sha512-uTtNRLCp8vMfRljvRuoOxwdYhD8uX6hmqI19svC0veEL69JeAOB61dNYrGoByJP/+/S18ABhTYqJ9ViNnam6mA==
   dependencies:
     "@types/node" "^15.12.2"
-    mini-program-xml-parser "0.0.3"
+    mini-program-xml-parser "0.0.4"
     minimist "^1.2.6"
 
 minimatch@4.2.1:
