@@ -2,8 +2,8 @@
 	"name": "mini-xml-transform",
 	"displayName": "小程序xml互转",
 	"description": "各平台小程序xml互转插件",
-	"version": "0.0.1",
-  "publisher": "yirizhou",
+	"version": "0.0.2",
+	"publisher": "yirizhou",
 	"engines": {
 		"vscode": "^1.60.0"
 	},
