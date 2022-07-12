@@ -35,6 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
       const dest = format(fileObj);
 
       try {
+        (process.env as any).isLowerCaseTag = true;
         parseXml(relative(rootPath, filePath), dest, {
           isLowerCaseTag: true,
           useRootPath: true,
