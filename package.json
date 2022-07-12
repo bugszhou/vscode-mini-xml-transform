@@ -1,25 +1,43 @@
 {
-  "name": "mini-xml-transform",
+	"name": "mini-xml-transform",
 	"displayName": "小程序xml互转",
 	"description": "各平台小程序xml互转插件",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.69.0"
+		"vscode": "^1.50.0"
 	},
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:mini-xml-transform.helloWorld"
+		"onCommand:extension.wxml2axml"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "mini-xml-transform.helloWorld",
-				"title": "Hello World"
+				"command": "extension.wxml2axml",
+				"title": "wxml2axml"
 			}
-		]
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.wxml2axml",
+					"group": "1_modification"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "mini program xml transform configuration",
+			"properties": {
+				"mini-xml-transform.sourceFolderName": {
+					"type": "string",
+					"default": "src"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
@@ -30,16 +48,20 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.69.0",
 		"@types/glob": "^7.2.0",
 		"@types/mocha": "^9.1.1",
 		"@types/node": "14.x",
+		"@types/vscode": "^1.69.0",
 		"@typescript-eslint/eslint-plugin": "^5.21.0",
 		"@typescript-eslint/parser": "^5.21.0",
+		"@vscode/test-electron": "^2.1.3",
 		"eslint": "^8.14.0",
 		"glob": "^8.0.1",
 		"mocha": "^9.2.2",
-		"typescript": "^4.6.4",
-		"@vscode/test-electron": "^2.1.3"
+		"typescript": "^4.6.4"
+	},
+	"dependencies": {
+		"mini-program-xml-parser": "^0.0.3",
+		"mini-xml-parser": "^0.2.4"
 	}
 }
