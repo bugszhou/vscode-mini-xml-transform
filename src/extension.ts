@@ -3,6 +3,7 @@
 import { format, parse, relative } from "path";
 import * as vscode from "vscode";
 import parseXml from "mini-xml-parser";
+import { readFileSync } from "fs";
 
 enum SupportFileExt {
   ".wxml" = 1,
@@ -17,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
   // The commandId parameter must match the command field in package.json
   let disposable = vscode.commands.registerCommand(
     "extension.wxml2axml",
-    (info) => {
+    async (info) => {
       const rootPath = vscode.workspace.workspaceFolders?.[0].uri.path || "";
       const filePath = info.path || "";
       const fileObj = parse(filePath);
@@ -27,6 +28,16 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
       const allConfig = vscode.workspace.getConfiguration("mini-xml-transform");
+
+      const miniConfig =
+        (
+          await vscode.workspace.findFiles(
+            ".vscode/**/weapp2aliapp.mini.json",
+            "**/node_modules/**",
+            1,
+          )
+        )[0] || Object.create(null);
+
       const src = allConfig.get("sourceFolderName") as string;
 
       fileObj.ext = ".axml";
@@ -40,11 +51,12 @@ export function activate(context: vscode.ExtensionContext) {
           isLowerCaseTag: true,
           useRootPath: true,
           sourceDir: src,
-					cwd: rootPath,
+          cwd: rootPath,
+          elementMappings: JSON.parse(readFileSync(miniConfig.path, "utf-8")),
         });
         vscode.window.showInformationMessage("转换成功！");
       } catch (e) {
-				console.log(e);
+        console.log(e);
         vscode.window.showInformationMessage("转换失败！");
       }
     },
