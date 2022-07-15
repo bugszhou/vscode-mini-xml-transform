@@ -47,12 +47,16 @@ export function activate(context: vscode.ExtensionContext) {
 
       try {
         (process.env as any).isLowerCaseTag = true;
+        const elementMappings = miniConfig.path
+          ? JSON.parse(readFileSync(miniConfig.path, "utf-8") || "{}")
+          : Object.create(null);
+
         parseXml(relative(rootPath, filePath), dest, {
           isLowerCaseTag: true,
           useRootPath: true,
           sourceDir: src,
           cwd: rootPath,
-          elementMappings: JSON.parse(readFileSync(miniConfig.path, "utf-8")),
+          elementMappings,
         });
         vscode.window.showInformationMessage("转换成功！");
       } catch (e) {
