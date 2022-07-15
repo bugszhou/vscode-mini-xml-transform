@@ -942,20 +942,20 @@ micromatch@^4.0.4:
     braces "^3.0.2"
     picomatch "^2.3.1"
 
-mini-program-xml-parser@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/mini-program-xml-parser/-/mini-program-xml-parser-0.0.7.tgz#062ae4c146399f83a18c3a0b7166ef7e5d62007c"
-  integrity sha512-sdnOzc5HvTUCx895cKXUsclc3kGmpJJkRsxU1bfJSN7UcUwMY5RA61B5nEiuX0AmGm7K/FevgAFIemnU2AJsEg==
+mini-program-xml-parser@0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/mini-program-xml-parser/-/mini-program-xml-parser-0.0.8.tgz#f01d5b263070ba73bbbe47e2ca30bcd20b1fb382"
+  integrity sha512-8Hqsmt9eFdzlryt/QmnvK1zg5YXBijVPtRKGxA0Pk5RwCI4KN5nKwsM1RkZizOo4pFnxOWXTF0eskRVfPTRoNA==
   dependencies:
     entities "^4.3.1"
 
-mini-xml-parser@^0.2.14:
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/mini-xml-parser/-/mini-xml-parser-0.2.14.tgz#18fe806edcfb2f738a768ef2a377de255c22bb8e"
-  integrity sha512-dNJkOK6SSu/bcdY18XbjFfW07imoS5b3FxuQ10hygbrfejqNprn59s9PzJxycUVUPM3c5N3qGqNGLMgSwWKsmQ==
+mini-xml-parser@^0.2.15:
+  version "0.2.15"
+  resolved "https://registry.yarnpkg.com/mini-xml-parser/-/mini-xml-parser-0.2.15.tgz#34ca119f5ea2d981136d7421e37467b942a7f8e8"
+  integrity sha512-WGaoFpaHaUOUFMw2J9oWItCHJchg7xH7srd2b01lqyCddMwoXSsjmclwLt2GiVmJ8rxoxSet/z96xRyCBG/2mA==
   dependencies:
     "@types/node" "^15.12.2"
-    mini-program-xml-parser "0.0.7"
+    mini-program-xml-parser "0.0.8"
     minimist "^1.2.6"
 
 minimatch@4.2.1:
