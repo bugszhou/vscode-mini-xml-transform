@@ -3,7 +3,7 @@
 import { format, parse, relative } from "path";
 import * as vscode from "vscode";
 import parseXml from "mini-xml-parser";
-import { readFileSync } from "fs";
+import { existsSync, readFileSync } from "fs";
 
 enum SupportFileExt {
   ".wxml" = 1,
@@ -44,6 +44,29 @@ export function activate(context: vscode.ExtensionContext) {
       fileObj.base = `${fileObj.name}${fileObj.ext}`;
 
       const dest = format(fileObj);
+
+      if (existsSync(dest)) {
+        const content = readFileSync(dest, "utf-8");
+
+        if (content.includes("@mini-transform-disabled")) {
+          vscode.window.showErrorMessage("文件已存在且不可覆盖");
+          return;
+        }
+
+        const result = await vscode.window.showInformationMessage(
+          "文件已存在，是否要覆盖",
+          {
+            modal: true,
+          },
+          {
+            title: "覆盖",
+          },
+        );
+
+        if (result?.title !== "覆盖") {
+          return;
+        }
+      }
 
       try {
         (process.env as any).isLowerCaseTag = true;
